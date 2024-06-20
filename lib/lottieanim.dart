@@ -1,0 +1,3 @@
+class lottianim extends StatelessWidget{
+
+}
