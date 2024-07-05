@@ -47,6 +47,10 @@ dependencies:
   google_maps_flutter: ^2.7.0
   geolocator:
   rive: ^0.13.8
+  image_picker:
+  flutter_form_builder:
+  hive_flutter:
+  hive:
 
 dev_dependencies:
   flutter_test:

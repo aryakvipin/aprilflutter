@@ -5,6 +5,9 @@ import '../db/SQLHelper.dart';
 import 'login.dart';
 import 'login_signup.dart';
 
+void main(){
+  runApp(MaterialApp(home:Signup_Form()));
+}
 class Signup_Form extends StatefulWidget {
   @override
   State<Signup_Form> createState() => _Signup_FormState();
@@ -118,25 +121,29 @@ class _Signup_FormState extends State<Signup_Form> {
               Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: TextFormField(
-                  validator: (pass2) {
-                    if (pass2!.isEmpty || pass2.length < 6) {
-                      return "Password must should be greater than 6";
-                    } else if (pass.text != cpass.text) {
-                      return "Password not matched";
-                    } else {
-                      return null;
+                  keyboardType: TextInputType.phone,
+                  validator: (userInput) {
+                    if (userInput!.isEmpty && userInput !=10) {
+                      return 'Please enter your phone number';
                     }
+
+                    // Ensure it is only digits and optional '+' or '00' for the country code.
+                    if (!RegExp(r'^(\+|91)[0-9]+$').hasMatch(userInput)) {
+                      return 'Please enter a valid phone number';
+                    }
+
+                    return null; // Return null when the input is valid
                   },
-                  controller: cpass,
-                  obscureText: true,
+
                   obscuringCharacter: '*',
                   decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.lock),
-                      labelText: "Confirm Password",
+                      labelText: "phone",
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(5)))),
                 ),
               ),
+
               ElevatedButton(
                   style: ButtonStyle(
                       minimumSize:
@@ -191,7 +198,7 @@ class _Signup_FormState extends State<Signup_Form> {
                                 builder: (context) => Login_Form()));
                       },
                       child: const Text(
-                        "Login!!",
+                       45,
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -205,4 +212,5 @@ class _Signup_FormState extends State<Signup_Form> {
       ),
     );
   }
+
 }
