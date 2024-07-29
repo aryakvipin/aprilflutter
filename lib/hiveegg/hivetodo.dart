@@ -66,10 +66,6 @@ class _MyTODoState extends State<MyTODo> {
   }
 
   //reading single data
-  Map<String,dynamic> readData(int key){
-    final data = tbox.get(key);
-    return data;
-  }
 
   @override
   Widget build(BuildContext context) {
