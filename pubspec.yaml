@@ -55,6 +55,7 @@ dependencies:
   email_validator: ^3.0.0
   http:
   permission_handler:
+  cached_network_image:
 
 dev_dependencies:
   flutter_test:

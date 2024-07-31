@@ -198,7 +198,7 @@ class _Signup_FormState extends State<Signup_Form> {
                                 builder: (context) => Login_Form()));
                       },
                       child: const Text(
-                       45,
+                       "reg",
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
