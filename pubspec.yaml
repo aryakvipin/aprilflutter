@@ -56,6 +56,10 @@ dependencies:
   http:
   permission_handler:
   cached_network_image:
+  dio:
+  top_snackbar_flutter:
+  scrollable_positioned_list: ^0.3.8
+  internet_connection_checker:
 
 dev_dependencies:
   flutter_test:
